@@ -8,6 +8,16 @@ var prodcategorySchema = new mongoose.Schema(
       unique: true,
       index: true,
     },
+    parentCategory: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "PCategory",
+    },
+    subCategory: [
+      {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "PCategory",
+      },
+    ],
   },
   {
     timestamps: true,
